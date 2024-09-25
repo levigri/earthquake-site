@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Презентация Землетрясения</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .slide {
+            width: 80%;
+            height: 80%;
+            display: none;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+            .slide.active {
+                display: block;
+            }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .navigation {
+            margin-top: 20px;
+        }
+
+            .navigation button {
+                padding: 10px 20px;
+                font-size: 16px;
+                margin: 0 10px;
+                cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+
+    <!-- Слайды с текстом и изображениями -->
+    <div class="slide active" id="slide1">
+        <h1>ЗЕМЛЕТРЕСЕНИЯ</h1>
+        <p>Создано Соболевым Артёмом 6 А</p>
+        
+    </div>
+
+    <div class="slide" id="slide2">
+        <h1>Землетрясение</h1>
+        <p>ЗЕМЛЕТРЯСЕНИЕ – это подземные толчки и колебания земной поверхности, возникающие в результате внезапных смещений и разрывов в земной коре или верхней мантии и передающиеся на большие расстояния в виде упругих колебаний.</p>
+        <img src="Землетрясение 3.png" alt="Изображение слайда 2">
+    </div>
+
+    <div class="slide" id="slide3">
+        <h1>Топ 3 факта про землетрясения</h1>
+        <p>
+            1:Архитектурные строения инков были невероятно устойчивы к сейсмической активности. Каменная кладка, которую использовали инки, могла выдержать самое крупное землетрясение.
+        </p>
+        <img src="38f96dcb9c5e6ff123e4b28b1d6a88e0 (1).jpg" alt="Изображение слайда 3">
+    </div>
+
+    <div class="slide" id="slide4">
+        <h1>Факт 2</h1>
+        <p>
+            В 2011 году, после землетрясения в Японии, Земля начала вращаться быстрее, а сутки стали короче на 2 секунды. К 2015 году скорость вращения вернулась к норме.
+        </p>
+        <img src="529985101_0_0_0_0_650x0_80_0_0_1a73ccc9a7ce133f00d32685e2f7715c.jpg" alt="Изображение слайда 4">
+    </div>
+
+    <div class="slide" id="slide5">
+        <h1>Факт 3</h1>
+        <p>
+            Глубинные землетрясения могут происходить на глубинах от 300 до 700 км. Обычно они не вызывают серьезного ущерба из-за большой удаленности от поверхности Земли.
+        </p>
+        <img src="220918_earthquakes_by_depth_2.jpg" alt="Изображение слайда 5">
+    </div>
+
+    <div class="slide" id="slide6">
+        <h1>Самое смертельное землетрясение</h1>
+        <p>
+            Землетрясение в 1201 году в восточной части Средиземноморья стало самым смертоносным в истории, в результате которого погибло больше 1 миллиона человек.
+        </p>
+        
+    </div>
+
+    <div class="slide" id="slide7">
+        <h1>3 самых разрушительных землетрясения</h1>
+        <p>
+            1.Самым серьезным землетрясением в истории человечества считается серия подземных толчков, произошедших у берегов Японии 11 мая 2011 года. Самый сильный из них, магнитудой 9, зарегистрированный на глубине 30 км в 72 км от побережья архипелага, продолжался около 6 минут и вызвал цунами высотой более 40 метров.
+            2.Второе по масштабам разрушения землетрясение также произошло в Японии, находящейся в одном из наиболее сейсмоопасных регионов мира. Рано утром 17 января 1995 г. в в окрестностях города Кобе на юге страны был зарегистрирован подземный толчок магнитудой 6,9. Сравнительно небольшая глубина эпицентра — всего 16 км - стала причиной значительных разрушений
+            3.Третье по разрушительности землетрясение также случилось в Азиатско-Тихоокеанском регионе — в Китае. В ночь на 12 мая 2008 г. подземный толчок магнитудой 8 произошел в центральной провинции Сычуань на глубине 19 километров
+        </p>
+     
+    </div>
+
+    <div class="slide" id="slide8">
+        <h1>Спасибо за просмотр!</h1>
+    
+    </div>
+
+    <!-- Навигация между слайдами -->
+    <div class="navigation">
+        <button onclick="prevSlide()">Назад</button>
+        <button onclick="nextSlide()">Вперед</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 8;
+
+        function showSlide(slideNumber) {
+            for (let i = 1; i <= totalSlides; i++) {
+                document.getElementById(`slide${i}`).classList.remove('active');
+            }
+            document.getElementById(`slide${slideNumber}`).classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = currentSlide < totalSlides ? currentSlide + 1 : 1;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = currentSlide > 1 ? currentSlide - 1 : totalSlides;
+            showSlide(currentSlide);
+        }
+    </script>
+</body>
+</html>
+
